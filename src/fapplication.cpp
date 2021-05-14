@@ -787,8 +787,7 @@ bool FApplication::loadReferenceModel(const QString &  databaseName, bool fullLo
 		// this sha will be used to determine whether the user's parts folder can be updated from the remote repo
 		sha = PartsChecker::getSha(dir.absolutePath());
 		if (sha.isEmpty()) {
-			DebugDialog::debug(QString("1.6 SHA empty"));
-			return false;
+			sha = "unknown";
 		}
 		referenceModel->setSha(sha);
 	}
